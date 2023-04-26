@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <center>
+<h1>Madlib</h1>
+    <form id="myForm">
+        <label for="name">Random Name:</label><br>
+        <input type="text" id="name" name="name">
+        <br>
+        <br>
+        <label for="food">Food:</label><br>
+        <input type="text" id="food" name="food">
+        <br>
+        <br>
+        <label for="obj">Object:</label><br>
+        <input type="text" id="obj" name="obj">
+        <br>
+        <br>
+        <label for="say">Phrase/Saying:</label><br>
+        <textarea rows="3" cols="20" id="say" name="say"></textarea>
+        <br>
+        <br>
+        <label for="choseAnimal">Choose an Animal:</label><br>
+        <select id="chooseAnimal">
+            <option value="Select an Animal">Select Animal</option>
+            <option value="Bears">Bears</option>
+            <option value="Tigers">Tigers</option>
+            <option value="Rats">Rats</option>
+            <option value="Bats">Bats</option>
+        </select>
+        <br>
+        <br>
+        <label for="place"> Specific Place:</label><br>
+        <input type="text" id="place" name="place">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    </center>
+<div id="formContentHere"></div>
+<script>
+    var form=document.getElementById("myForm");
+    form.addEventListener("submit",function(event) {
+    event.preventDefault();
+    
+    var name=document.getElementById("name").value;
+    var food=document.getElementById("food").value;
+    var obj=document.getElementById("obj").value;
+    var say=document.getElementById("say").value;
+    var chooseAnimal=document.getElementById("chooseAnimal").value;
+    var place=document.getElementById("place").value;
+    var formContents = document.getElementById("formContentHere");
+    
+    formContents.innerHTML = "Hi my name is " + name +
+    ", but my friends call me " + food +
+    ". My favorite color is the color of a " + obj +
+    " and my favorite thing to say is " + say +
+    ". My parents are " + chooseAnimal +
+    ", which is why we live in " + place;
+    });
+</script>
+
+</body>
+</html>
